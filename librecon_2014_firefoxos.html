@@ -1,0 +1,783 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="fade nonumbers">
+<head>
+  <meta charset="UTF-8">
+  <title>Firefox OS, otra manera de hacer las cosas</title>
+  <meta name="viewport" content="width=device-width, user-scalable=yes">
+  <link rel="stylesheet" href="themes/mozilla/styles/style.css">
+  <style type="text/css">
+    div[id$='bullets'].slide > div::after {
+      content: 'Solo para información, NO mostrar';
+      background: rgba(200,0,0,0.5);
+      color: #fff;
+      position: absolute;
+      top: 20px;
+      right: 0;
+      padding: 5px 20px;
+      transform: rotate(90deg) translate(52%,-150px);
+      border-radius: 5px;
+    }
+    .full div[id$='bullets'].slide > div::after {
+      animation: wiggle alternate 1s infinite;
+    }
+    @keyframes wiggle {
+      from {
+        transform: rotate(90deg) translate(52%,-150px);
+      }
+      to {
+        transform: rotate(90deg) translate(52%,-160px);
+      }
+    }
+    .slide.shout h2 {
+      font-size: 130px;
+    }
+
+    .bg_black{
+      background: rgba(0,0,0,0.5);
+      padding: 5px;
+    }
+
+    .no_padding{
+      padding: 0;
+    }
+  </style>
+</head>
+<body class="list">
+
+  <header class="caption">
+    <h1>Firefox OS, otra manera de hacer las cosas</h1>
+    <p class="footer">
+    Pablo Bernardo
+      <a href="http://twitter.com/voylinux">(@voylinux)</a>
+    </p>
+  </header>
+  <aside class="talkdescription">
+    <p>Esta presentación usa el sistema shower, puedes pasar por encima de cada diapositiva para ver las notas y hacer clic en cualquiera de ellas para ir al modo de presentación. Después puedes usar las teclas para navegar <button onclick="goFullScreen()">Pantalla completa</button></p>
+    <p class="abstract">
+      <strong>Resumen: </strong>
+      Firefox OS representa una revolución en los sistemas operativos para smartphone en cuanto a planteamiento, objetivos y tecnología
+    </p>
+  </aside>
+
+  <div id="cover" class="slide cover h"><div>
+    <section>
+      <header>
+        <h2 style="font-size: 33px;">Firefox OS, otra manera de hacer las cosas</h2>
+      </header>
+      <img src="pictures/librecon/librecon_cover.png" 
+           class="middle shadow"
+           alt="Firefox OS LibreCon">
+      <small class="byline bg_black">
+        Pablo Bernardo, LibreCon, Bilbao, 11 y 12/11/2014
+      </small>
+    </section>
+  </div></div>
+
+<!-- end slide block -->
+
+
+
+  <div id="speaker" class="slide"><div>
+    <section>
+      <header>
+        <h2>Pablo Bernardo (@voylinux)</h2>
+      </header>
+      <figure class="left" style="padding: 0; margin-right: 50px;">
+        <img src="pictures/librecon/me_mhww.jpg" 
+             style="border-radius: 100%;"
+             alt="Pablo Bernardo" 
+             height="350">
+      </figure>
+      <ul class="">
+        <li>Desarrollador web y apps</li>
+        <li>Miembro activo Mozilla Hispano</li>
+        <li>Orgulloso #Mozillian</li>
+        <li>Bloguero, finisher, padre, geek, speaker...</li>
+        <li>Open Web Evangelist</li>
+        <li>Comunicador apasionado</li>
+      </ul>
+    </section>
+  </div></div>
+
+<!-- ===================================================================
+Firefox OS 
+======================================================================== -->
+
+  <div id="where" class="slide cover h"><div>
+    <section>
+      <header>
+        <h2>Una realidad en el mundo</h2>
+        <img src="pictures/librecon/where_firefoxos.png" 
+             alt="Where is Firefox OS?">
+      </header>
+      <small class="credits">
+        <a href="http://nickdesaulniers.github.io/where-is-firefox-os/"
+            target="_blank">http://nickdesaulniers.github.io/where-is-firefox-os/</a>
+      </small>
+    </section>
+  </div></div>
+
+  <div id="caracteristicas" class="slide"><div>
+    <section>
+      <header>
+        <h2>Firefox OS</h2>
+      </header>
+      <ul class="longlist">
+        <li>Firefox OS es el único sistema operativo móvil completamente abierto basado en estándares web</li>
+        <li>Mozilla desbloquea la web como una plataforma real para crear app móviles con HTML, CSS y JS</li>
+        <li>Se enfoca especialmente (no únicamente) a mercados emergentes</li>
+        <li>Devuelve el control a los desarrolladores, no a intermediarios</li>
+        <li>Representa una opción <b>realmente</b> abierta</li>
+      </ul>
+    </section>
+  </div></div>
+
+  <div id="forall" class="slide"><div>
+    <section>
+      <header>
+        <h2>Mejorando el mundo móvil</h2>
+      </header>
+      <figure class="right shadow frame">
+        <img src="pictures/fxos/nokia-photos.jpg" 
+             alt="Nokia couldn't take photos"
+             height="400">
+      </figure>
+      <ul class="inner">
+        <li class="active">Enfocado a mercados emergentes y nuevos</li>
+        <li>Hardware asequible</li>
+        <li>Sin una cuenta controlada por terceros</li>
+        <li>Tecnologías web, sin tecnologías propietarias</li>
+        <li>Presente en 24 paises, más de 15 dispositivos</li>
+      </ul>
+    </section>
+  </div></div>
+
+  <div id="dispositivos" class="slide cover h"><div>
+    <section>
+      <header>
+        <h2>
+        <a href="https://firefoxosdevices.org/en/"
+            target="_blank">https://firefoxosdevices.org/en/</a>
+        </h2>
+        <img src="pictures/librecon/fxos_devices.png" 
+             alt="Devices">
+      </header>
+    </section>
+  </div></div>
+
+  <div id="deserves" class="slide cover h"><div>
+    <section>
+      <header>
+        <h2>La plataforma móvil que HTML5 merece</h2>
+      </header>
+      <img src="pictures/fxos/keep-calm-and-trust-html5.jpg" 
+           alt="Keep calm and trust HTML5" 
+           class="middle shadow" height="450">
+    </section>
+  </div></div>
+
+  <div id="opensource" class="slide cover"><div>
+    <section>
+      <header>
+        <h2>Verdadero Open Source</h2>
+      </header>
+      <img src="pictures/librecon/repo_gaia.png" 
+           alt="Github Gaia" 
+           class="middle shadow" height="450">
+      <div class="credits">
+        <a href="https://github.com/mozilla-b2g/gaia" target="_blank">https://github.com/mozilla-b2g/gaia</a>
+      </div>
+    </section>
+  </div></div>
+  <div id="arquitectura" class="slide"><div>
+    <section>
+      <header>
+        <h2>Arquitectura del sistema</h2>
+      </header>
+      <figure class="left shadow no_padding"
+          style="margin-right: 50px;">
+          <img src="pictures/librecon/arquitectura_firefoxos.jpg" 
+               alt="Arquitectura Firefox OS" 
+               class="" height="400">
+      </figure>
+      <ul class="inner">
+          <li class="active"><b>Gonk</b>: Kernel y controladores</li>
+          <li><b>Gecko</b>: Tiempo de ejecución y APIS (accesibles)</li>
+          <li><b>Gaia</b>: Interfaz de usuario</li>
+      </ul>
+    </section>
+  </div></div>
+
+
+  <div id="browser" class="slide"><div>
+    <section>
+      <header>
+        <h2>Soporte del navegador predecible</h2>
+      </header>
+      <img src="pictures/fxos/firefox-oct-2013.png" 
+           alt="firefox" 
+           class="middle">
+    </section>
+  </div></div>
+
+
+
+  <div id="webtech" class="slide cover h"><div>
+    <section>
+      <header>
+        <h2>Todo el sistema es Web y propuesta de estándar</h2>
+      </header>
+      <img src="pictures/librecon/web_apis.png" 
+           alt="Web APIs" 
+           class="middle shadow">
+    </section>
+  </div></div>
+
+   <div id="battery" class="slide"><div>
+    <section>
+      <header>
+        <h2>Batería API</h2>
+      </header>
+        <pre>
+          <code>var b = navigator.battery;</code>
+          <code>if (b) {</code>
+          <code>  var level = Math.round(b.level * 100) + "%",</code>
+          <code>      charging = (b.charging) ? "" : "not ",</code>
+          <code>      chargeTime = parseInt(b.chargingTime / 60, 10),</code>
+          <code>      dischargeTime = parseInt(b.dischargingTime/60,10);</code>
+          <code>  b.addEventListener("levelchange", show);</code>
+          <code>  b.addEventListener("chargingchange", show);</code>
+          <code>  b.addEventListener("chargingtimechange", show);</code>
+          <code>  b.addEventListener("dischargingtimechange", show);</code>
+          <code>}</code>
+        </pre>
+    </section>
+  </div></div>
+<!-- ===================================================================
+APLICIACIONES DE LA WEB ABIERTA 
+======================================================================== -->
+
+  <div id="zomgopenapps" class="slide shout"><div>
+    <section>
+      <header>
+        <h2>Aplicaciones de la Web abierta</h2>
+      </header>
+    </section>
+  </div></div>
+
+
+   <div id="quesonapps" class="slide"><div>
+    <section>
+      <header>
+        <h2>¿Aplicaciones Firefox OS?</h2>
+      </header>
+      <ul class="longlist">
+        <li>Aplicaciones de HTML5 con un archivo manifiest</li>
+        <li>Define datos de la app, permisos solicitados y otra información.</li>
+        <li>Modelo de seguridad de tres capas. Alojada vs. Empaquetada</li>
+        <li>Apps accesibles desde la web o el marketplace</li>
+      </ul>
+    </section>
+  </div></div>
+
+  <div id="manifest" class="slide"><div>
+    <section>
+      <header>
+        <h2>Archivo manifest</h2>
+      </header>
+      <pre>
+        <code>{</code>
+        <code>  "name": "Mi Aplicación",</code>
+        <code>  "description": "La descripción del uso",</code>
+        <code>  "launch_path": "/",</code>
+        <code>  "icons": { "128": "/img/icon-128.png" },</code>
+        <code>  "developer": {</code>
+        <code>    "name": "Tu nombre u organización",</code>
+        <code>    "url": "http://your-homepage-here.org"</code>
+        <code>  }</code>
+        <code>}</code>
+      </pre>
+      <p class="demourl"><a href="https://developer.mozilla.org/docs/Apps/Manifest">Manifiesto de la App</a></p>
+    </section>
+  </div></div>
+
+
+
+  <div id="threekinds" class="slide"><div>
+    <section>
+      <header>
+        <h2>Tres niveles de acceso&hellip;</h2>
+      </header>
+      <ul>
+        <li><mark>Aplicaciones alojadas</mark> - guardadas en tu servidor, fácil de actualizar, acceso limitado.</li>
+        <li><mark>Aplicaciones privilegiadas</mark> - revisadas por el marketplace, empaquetadas y firmadas</li>
+        <li><mark>Aplicaciones certificadas</mark> - parte del SO, solo de Mozilla y asociados</li>
+      </ul>
+      <p class="demourl"><a href="https://developer.mozilla.org/en-US/docs/Apps/App_permissions">App permissions</a></p>
+    </section>
+  </div></div>
+
+
+<!-- ===================================================================
+WEB APIS
+======================================================================== -->
+
+  <div id="zomgapis" class="slide shout"><div>
+    <section>
+      <header>
+        <h2>WebAPIs</h2>
+      </header>
+    </section>
+  </div></div>
+
+  <div id="webapis" class="slide h"><div>
+    <section>
+      <header>
+        <h2>Web APIs</h2>
+      </header>
+      <img src="pictures/fxos/webapiwiki.png" height="400" class="middle shadow" alt="WebAPI wiki">
+      <p class="demourl">
+        <a href="https://wiki.mozilla.org/WebAPI">Wiki de las WebAPI</a>
+      </p>      
+    </section>
+  </div></div>
+
+
+   <div id="webapilist" class="slide"><div>
+    <section>
+      <header>
+        <h2>Web APIs (aplicaciones alojadas)</h2>
+      </header>
+      <ul class="inline">
+        <li>API vibración</li>
+        <li>Orientación de la pantalla</li>
+        <li>Geolocalización API</li>
+        <li>Control del mouse API</li>
+        <li>WebApps abiertas</li>
+        <li>Información de la red API</li>
+        <li>Estado de la batería API</li>
+        <li>Alarma API</li>
+        <li>Envio de notificaciones API</li>
+        <li>WebFM API / FMRadio</li>
+        <li>Pagos por Web</li>
+        <li>IndexedDB</li>
+        <li>Sensor de luz ambiente</li>
+        <li>Sensor de proximidad</li>
+        <li>Notificaciones</li>
+      </ul>
+      <p class="demourl">
+        <a href="https://hacks.mozilla.org/2013/02/using-webapis-to-make-the-web-layer-more-capable/">Usar WebAPIs para hacer ampliar la capacidad de la capa web</a>
+      </p>      
+    </section>
+  </div></div>
+
+
+   <div id="webapilistprivileged" class="slide"><div>
+    <section>
+      <header>
+        <h2>Web APIs (aplicaciones privilegiadas)</h2>
+      </header>
+      <ul>
+        <li>Memoria del dispositivo API</li>
+        <li>Navegador API</li>
+        <li>TCP Socket API</li>
+        <li>Contactos API</li>
+        <li>systemXHR</li>
+      </ul>
+      <p class="demourl">
+        <a href="https://hacks.mozilla.org/2013/02/using-webapis-to-make-the-web-layer-more-capable/">Usar WebAPIs para hacer ampliar la capacidad de la capa web</a>
+      </p>      
+    </section>
+  </div></div>
+
+   <div id="contactsapi" class="slide"><div>
+    <section>
+      <header>
+        <h2>Contactos API</h2>
+      </header>
+        <pre>
+          <code>var contact = new mozContact();</code>
+          <code>contact.init({name: "Christian"});</code>
+          <code>var request = navigator.mozContacts.save(contact);</code>
+          <code>request.onsuccess = function() {</code>
+          <code>  // contact generated</code>
+          <code>};</code>
+          <code>request.onerror = function() {</code>
+          <code>  // contact generation failed</code>
+          <code>};</code>
+        </pre>
+    </section>
+  </div></div>
+
+   <div id="webapilistcertified" class="slide"><div>
+    <section>
+      <header>
+        <h2>Web APIs (aplicaciones certificadas)</h2>
+      </header>
+        <ul class="inline">
+          <li>WebTelephony</li>
+          <li>WebSMS</li>
+          <li>Espera API</li>
+          <li>Opciones API</li>
+          <li>Adminstración de energía API</li>
+          <li>Conexión móvil API</li>
+          <li>Información WiFi API</li>
+          <li>WebBluetooth</li>
+          <li>Permisos API</li>
+          <li>Estadísticas de red API</li>
+          <li>Cámara API</li>
+          <li>Fecha/Reloj API</li>
+          <li>Atención de la pantalla</li>
+          <li>Correo de voz</li>
+        </ul>
+     <p class="demourl">
+        <a href="https://hacks.mozilla.org/2013/02/using-webapis-to-make-the-web-layer-more-capable/">Usar WebAPIs para hacer ampliar la capacidad de la capa web</a>
+      </p>      
+    </section>
+  </div></div>
+
+<!-- ===================================================================
+WEB ACTIVITIES
+======================================================================== -->
+
+  <div id="zomgactivities" class="slide shout"><div>
+    <section>
+      <header>
+        <h2>Web Activities</h2>
+      </header>
+    </section>
+  </div></div>
+
+  <div id="activities" class="slide"><div>
+    <section>
+      <header>
+        <h2>Web activities</h2>
+      </header>
+      <ul class="lots">
+        <li>configure</li>
+        <li>costcontrol</li>
+        <li>dial</li>
+        <li>open</li>
+        <li>pick</li>
+        <li>record</li>
+        <li>save-bookmark</li>
+        <li>share</li>
+        <li>view</li>
+        <li>new, p.e type: “websms/sms” o “webcontacts/contact” </li>
+      </ul>
+    </section>
+  </div></div>
+
+  <div id="imageactivity" class="slide"><div>
+    <section>
+      <header>
+        <h2>Obtener una imagen del teléfono (1/2)</h2>
+      </header>
+      <img src="pictures/fxos/pick-activity.jpg" alt="Pick activity" class="right shadow">
+      <pre>
+        <code>var getphoto = new MozActivity({</code>
+        <code>  name: "pick",</code>
+        <code>  data: {</code>
+        <code>    type: ["image/png",</code> 
+        <code>           "image/jpg", </code>
+        <code>           "image/jpeg"]</code>
+        <code>  }</code>
+        <code>});</code>
+      </pre>
+    </section>
+  </div></div>
+
+  <div id="imageactivity2" class="slide"><div>
+    <section>
+      <header>
+        <h2>Obtener una imagen del teléfono (2/2)</h2>
+      </header>
+      <pre>
+        <code>getphoto.onsuccess = function () {</code>
+        <code>  var img = document.createElement("img");</code>
+        <code>  if (this.result.blob.type.indexOf("image") != -1) {</code>
+        <code>    img.src = window.URL.createObjectURL(this.result.blob);</code>
+        <code>  }</code>
+        <code>};</code>
+        <code>getphoto.onerror = function () { // error</code>
+        <code>};</code>
+      </pre>
+    </section>
+  </div></div>
+
+  <div id="android" class="slide"><div>
+    <section>
+      <header>
+        <h2>Activities y aplicaciones alojadas en Android</h2>
+      </header>
+      <figure class="middle shadow swing frame">
+        <img src="pictures/fxos/foxkeh-android.png" 
+             alt="Foxkeh loves android">
+      </figure>
+    </section>
+  </div></div>
+
+<!-- ===================================================================
+DYNAMIC APP SEARCH
+======================================================================== -->
+
+  <div id="zomgsearch" class="slide shout"><div>
+    <section>
+      <header>
+        <h2>Búsqueda dinámica de aplicaciones</h2>
+      </header>
+    </section>
+  </div></div>
+
+  <div id="dynappimage" class="slide"><div>
+    <section>
+      <header>
+        <h2>Caso de uso a aplicación</h2>
+      </header>
+       <img src="pictures/fxos/everythingme.jpg" 
+           alt="The search interface of Firefox OS" 
+           height="450"
+           class="middle"> 
+    </section>
+  </div></div>
+
+  <div id="everything" class="slide"><div>
+    <section>
+      <header>
+        <h2>Caso de uso a aplicación</h2>
+      </header>
+       <video class="middle" height="450" controls>
+        <source src="pictures/fxos/dynamicsearch.mp4"  type="video/mp4"></source>
+        <source src="pictures/fxos/dynamicsearch.webm"  type="video/webm"></source>
+      </video>     
+    </section>
+  </div></div>
+
+<!-- ===================================================================
+TOOLS 
+======================================================================== -->
+
+  <div id="zomgtools" class="slide shout"><div>
+    <section>
+      <header>
+        <h2>Herramientas</h2>
+      </header>
+    </section>
+  </div></div>
+
+  <div id="devtools" class="slide cover h"><div>
+    <section>
+      <header>
+        <h2>Sin IDE ni SDK. Usa el navegador</h2>
+      </header>
+      <img src="pictures/fxos/devtools.jpg" 
+           alt="Developer tools" 
+           class="middle">
+    </section>
+  </div></div>
+
+  <div id="fxossimulator" class="slide h"><div>
+    <section>
+      <header>
+        <h2>Simulador de Firefox OS</h2>
+      </header>
+      <img src="pictures/librecon/simulator.png" 
+           alt="Simulator" 
+           class="middle shadow" height="400">
+      <p class="demourl">
+        <a href="https://addons.mozilla.org/en-US/firefox/addon/firefox-os-simulator/">
+          Simulador de Firefox OS
+        </a>
+      </p>
+    </section>
+  </div></div>
+
+  <div id="fiddle" class="slide h"><div>
+    <section>
+      <header>
+        <h2>Prototipos con JSFiddle</h2>
+      </header>
+      <ol>
+        <li>Escribe tu código como harías normalmente con JSFiddle
+        </li>
+        <li>Agrega <code>/webapp.manifest</code> a la URL del Fiddle y pega el enlace en el simulador de Firefox OS para instalar la aplicación</li>
+        <li>También puedes agregar <code>/fxos.html</code> a la URL del Fiddle para obtener una página de instalación como tendrías con una típica aplicación alojada de Firefox OS</li>
+      </ol> 
+      <p class="demourl">
+        <a href="https://hacks.mozilla.org/2013/08/using-jsfiddle-to-prototype-firefox-os-apps/">
+          Usar para prototipos de aplicaciones de Firefox OS
+        </a>
+      </p>
+    </section>
+  </div></div>
+
+
+  <div id="buildingfirefoxos" class="slide"><div>
+    <section>
+      <header>
+        <h2>Componentes de la interfaz de Firefox</h2>
+      </header>
+      <img src="pictures/fxos/buildingfirefoxos.png" 
+           alt="Building Firefox OS" 
+           class="middle shadow" height="400">
+      <p class="demourl">
+        <a href="http://buildingfirefoxos.com">Crear FirefoxOS</a>
+      </p>
+    </section>
+  </div></div>
+
+  <div id="buildingfirefoxosblocks" class="slide"><div>
+    <section>
+      <header>
+        <h2>Bloques de Firefox OS</h2>
+      </header>
+      <img src="pictures/fxos/buildingblocks.png" 
+           alt="Firefox OS UI components"
+           height="400" 
+           class="middle shadow">
+      <p class="demourl">
+        <a href="http://buildingfirefoxos.com/building-blocks/edit-mode.html">FirefoxOS edit mode</a>
+      </p>
+    </section>
+  </div></div>
+
+  <div id="bricks" class="slide"><div>
+    <section>
+      <header>
+        <h2>Mozilla Brick</h2>
+      </header>
+      <img src="pictures/fxos/brick.jpg" 
+           alt="Mozilla Brick" 
+           class="middle shadow" height="400">
+      <p class="demourl">
+        <a href="http://mozilla.github.io/brick/">Brick</a> – <a href="https://hacks.mozilla.org/2013/08/introducing-brick-minimal-markup-web-components-for-faster-app-development/">Presentamos Brick</a>
+      </p>
+    </section>
+  </div></div>
+
+  <div id="boilerplate" class="slide"><div>
+    <section>
+      <header>
+        <h2>Modelo de Web Activities</h2>
+      </header>
+      <img src="pictures/fxos/boilerplate.jpg" 
+           alt="Firefox OS Boiler Plate" 
+           class="middle shadow" height="400">
+      <p class="demourl">
+        <a href="https://github.com/robnyman/Firefox-OS-Boilerplate-App">Modelo de aplicaciones para Firefox OS</a>
+      </p>
+    </section>
+  </div></div>
+
+<!-- ===================================================================
+RECURSOS INFORMATIVOS 
+======================================================================== -->
+  
+  <div id="zomgresources" class="slide shout"><div>
+    <section>
+      <header>
+        <h2>Recursos</h2>
+      </header>
+    </section>
+  </div></div>
+
+  <div id="marketplace" class="slide"><div>
+    <section>
+      <header>
+        <h2>Firefox OS Marketplace</h2>
+      </header>
+        <img src="pictures/fxos/marketplace.jpg" alt="Firefox OS Marketplace" 
+             class="middle shadow">
+        <p class="demourl">
+          <a href="https://marketplace.firefox.com">https://marketplace.firefox.com/</a>
+        </p>
+    </section>
+  </div></div>
+
+  <div id="devhub" class="slide"><div>
+    <section>
+      <header>
+        <h2>Centro para desarrolladores</h2>
+      </header>
+        <img src="pictures/fxos/devhub.jpg" alt="Developer Hub" 
+             class="middle shadow" height="400">
+        <p class="demourl">
+          <a href="https://marketplace.firefox.com/developers/">https://marketplace.firefox.com/developers/</a>
+        </p>
+    </section>
+  </div></div>
+  
+  <div id="hacksblog" class="slide"><div>
+    <section>
+      <header>
+        <h2>El blog de Hacks</h2>
+      </header>
+        <img src="pictures/fxos/hacksblog.jpg" alt="Hacks Blog" 
+             class="middle shadow" height="400">
+        <p class="demourl">
+          <a href="https://hacks.mozilla.org/category/firefox-os/">https://hacks.mozilla.org/category/firefox-os/</a>
+        </p>
+    </section>
+  </div></div>
+  
+  <div id="videoseries" class="slide"><div>
+    <section>
+      <header>
+        <h2>Serie de videos sobre Firefox OS</h2>
+      </header>
+        <img src="pictures/fxos/fxosvideos.jpg" 
+             alt="Firefox OS Video Series" 
+             class="middle shadow" height="400">
+        <p class="demourl">
+          <a href="https://hacks.mozilla.org/category/videoseries/">https://hacks.mozilla.org/category/videoseries/</a>
+        </p>
+    </section>
+  </div></div>
+  
+  <div id="fxoswiki" class="slide"><div>
+    <section>
+      <header>
+        <h2>El Wiki de Firefox OS</h2>
+      </header>
+        <img src="pictures/fxos/fxoswiki.jpg" alt="Firefox OS Wiki" 
+             class="middle shadow" height="400">
+        <p class="demourl">
+          <a href="https://developer.mozilla.org/en/docs/Mozilla/Firefox_OS">https://developer.mozilla.org/en/docs/Mozilla/Firefox_OS</a>
+        </p>
+    </section>
+  </div></div>
+
+
+
+
+<!-- ===================================================================
+AND… I'M SPENT
+======================================================================== -->
+
+  <div id="thanks" class="slide"><div>
+    <section>
+      <header>
+        <h2>Gracias ¿preguntas?</h2>
+      </header>
+      <img src="pictures/mozillaoverview/redpanda.jpg" class="right" alt="Red panda (Firefox)">
+      <ul class="nobull">
+        <li>Pablo Bernardo</li>
+        <li>Miembro activo en Mozilla Hispano</li>
+        <li><a href="http://twitter.com/voylinux">@voylinux</a></li>
+        <li><strong>Slides</strong>:</li>
+        <li style="font-size:18px;">voylinux.github.io/librecon_2014_firefoxos</li>
+      </ul>
+      <small class="credits">
+        <a href="http://www.flickr.com/photos/yortw/5798336827/">Photo by Yortw</a>
+      </small>
+      <img src="pictures/librecon/logos.png" class="" alt="Logos LibreCon">
+    </section>
+  </div></div>
+
+
+
+  <div class="progress"><div></div></div>
+  <script src="scripts/script.js"></script>
+  <!-- Copyright © 2010–2012 Vadim Makeev — pepelsbey.net -->
+</body>
+</html>
